@@ -121,3 +121,23 @@ class MainWindow(QMainWindow):
 {{ summary }}
 
 ## Full Transcript
+{{transcript}}
+        """)
+        md = template.render(now=time.strftime("%Y-%m-%d %H:%M"), summary=summary, transcript=transcript)
+        path = "output/notes.md"
+        with open(path, "w") as f:
+            f.write(md)
+        webbrowser.open(f"file://{os.path.abspath(path)}")
+
+    def export(self):
+        path, _ = QFileDialog.getSaveFileName(self, "Save Markdown", "", "Markdown (*.md)")
+        if path:
+            with open("output/notes.md") as f:
+                with open(path, "w") as out:
+                    out.write(f.read())
+
+
+app = QApplication(sys.argv)
+window = MainWindow()
+window.show()
+sys.exit(app.exec())
