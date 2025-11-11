@@ -1,7 +1,7 @@
 PyQt6>=6.6
 sounddevice>=0.4
-numpy
-whisper @ git+https://github.com/openai/whisper.git
+numpy>=1.24
+openai-whisper>=2024.0
 transformers>=4.40
 torch>=2.3
 accelerate
