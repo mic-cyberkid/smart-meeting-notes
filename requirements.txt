@@ -1,0 +1,10 @@
+PyQt6>=6.6
+sounddevice>=0.4
+numpy
+whisper @ git+https://github.com/openai/whisper.git
+transformers>=4.40
+torch>=2.3
+accelerate
+jinja2
+markdown
+pyinstaller>=6.0
